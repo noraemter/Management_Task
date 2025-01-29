@@ -1,0 +1,38 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.my_first"
+    compileSdk = 34 // Or refer to flutter.compileSdkVersion if you want to use the property
+    ndkVersion = "23.1.7779620"  // Ensure this version is correct
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "com.example.my_first"
+        minSdk = 21  // Or refer to flutter.minSdkVersion
+        targetSdk = 33  // Or refer to flutter.targetSdkVersion
+        versionCode = 1  // Replace with flutter.versionCode if you prefer
+        versionName = "1.0.0"  // Replace with flutter.versionName if you prefer
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
