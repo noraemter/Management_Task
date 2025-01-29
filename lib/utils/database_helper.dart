@@ -14,7 +14,6 @@ class DatabaseHelper {
   Future<Database> get database async {
     if (_database != null) return _database!;
 
-    // If database is not yet initialized, initialize it.
     _database = await _initDatabase();
     return _database!;
   }
